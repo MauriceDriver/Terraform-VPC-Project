@@ -31,7 +31,7 @@ resource "aws_subnet" "public-eu-west-2b" {
 
 resource "aws_subnet" "public-eu-west-2c" {
   vpc_id                  = aws_vpc.London.id
-  cidr_block              = "10.32.3.0/24"
+  cidr_block              = "10.71.3.0/24"
   availability_zone       = "eu-west-2c"
   map_public_ip_on_launch = true
 
@@ -46,7 +46,7 @@ resource "aws_subnet" "public-eu-west-2c" {
 #these are for private
 resource "aws_subnet" "private-eu-west-2a" {
   vpc_id            = aws_vpc.London.id
-  cidr_block        = "10.32.11.0/24"
+  cidr_block        = "10.71.11.0/24"
   availability_zone = "eu-west-2a"
 
   tags = {
@@ -59,7 +59,7 @@ resource "aws_subnet" "private-eu-west-2a" {
 
 resource "aws_subnet" "private-eu-west-2b" {
   vpc_id            = aws_vpc.London.id
-  cidr_block        = "10.32.12.0/24"
+  cidr_block        = "10.71.12.0/24"
   availability_zone = "eu-west-2b"
 
   tags = {
@@ -73,7 +73,7 @@ resource "aws_subnet" "private-eu-west-2b" {
 
 resource "aws_subnet" "private-eu-west-2c" {
   vpc_id            = aws_vpc.London.id
-  cidr_block        = "10.32.13.0/24"
+  cidr_block        = "10.71.13.0/24"
   availability_zone = "eu-west-2c"
 
   tags = {
