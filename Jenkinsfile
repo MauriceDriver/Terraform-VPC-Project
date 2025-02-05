@@ -8,7 +8,7 @@ pipeline {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'AWS_SECRET_ACCESS_KEY' 
+                    credentialsId: 'xZjO1tXa0NWdjKO/nF1B1k0VXk3WiO+4PqiOI+iT' 
                 ]]) {
                     sh '''
                     echo "AWS_ACCESS_KEY_ID: $AWS_ACCESS_KEY_ID"
@@ -19,7 +19,7 @@ pipeline {
         }
         stage('Checkout Code') {
             steps {
-                git branch: 'main', url: 'https://github.com/derrickSh43/autoScale' 
+                git branch: 'main', url: 'https://github.com/MauriceDriver/Terraform-VPC-Project' 
             }
         }
         stage('Initialize Terraform') {
@@ -33,7 +33,7 @@ pipeline {
             steps {
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'AWS_SECRET_ACCESS_KEY'
+                    credentialsId: 'xZjO1tXa0NWdjKO/nF1B1k0VXk3WiO+4PqiOI+iT'
                 ]]) {
                     sh '''
                     export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
@@ -48,7 +48,7 @@ pipeline {
                 input message: "Approve Terraform Apply?", ok: "Deploy"
                 withCredentials([[
                     $class: 'AmazonWebServicesCredentialsBinding',
-                    credentialsId: 'AWS_SECRET_ACCESS_KEY'
+                    credentialsId: 'xZjO1tXa0NWdjKO/nF1B1k0VXk3WiO+4PqiOI+iT'
                 ]]) {
                     sh '''
                     export AWS_ACCESS_KEY_ID=$AWS_ACCESS_KEY_ID
